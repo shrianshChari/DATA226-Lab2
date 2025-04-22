@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 import logging
 
 from airflow.decorators import task, dag
+from airflow.models import Variable
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 import pandas as pd
 import yfinance as yf
@@ -12,12 +13,12 @@ from cursor import return_snowflake_cursor
 stock_symbols = ['AAPL', 'NVDA']  # Add more symbols as needed
 
 CONFIG = {
-    "database": "dev",
-    "schema": "stock_schema",
-    "table_name": "STOCK_PRICES",
-    "model_name": "m",
-    "forecast_table_name": "forecasted",
-    "final_table_name": "final"
+    "database": Variable.get('snowflake_database'),
+    "schema": Variable.get('snowflake_schema'),
+    "table_name": Variable.get('snowflake_table'),
+    "model_name": Variable.get('snowflake_model'),
+    "forecast_table_name": Variable.get('snowflake_forecast_table'),
+    "final_table_name": Variable.get('snowflake_final_table')
 }
 
 # Default arguments for the DAG
