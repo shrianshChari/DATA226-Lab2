@@ -1,4 +1,4 @@
-# DATA 226 Lab 1
+# DATA 226 Lab 2
 
 ### How to set up
 1. Clone the repository
