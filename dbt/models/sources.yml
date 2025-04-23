@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: raw
+    database: USER_DB_BULLFROG
+    schema: raw
+    description: "Schema which stores raw tables (ETL)"
+    tables:
+      - name: stock_prices
+        identifier: stock_prices
+        description: "Open, close, min, and max stock price daily"
+  - name: analytics
+    database: USER_DB_BULLFROG
+    schema: analytics
+    description: "Schema with stores analytics tables (ELT)"
+    tables:
+      - name: stock_percent_changes
+        identifier: stock_percent_changes
+        description: "Daily percent change in closing stock price"
