@@ -17,6 +17,3 @@ docker compose up
     - `snowflake_database` - Same database as above
     - `snowflake_schema` - Schema to put the raw data for ETL (basically anything but "analytics"; I use "raw")
     - `snowflake_table` - Table in the aforementioned schema to put the raw data; I use "stock_prices"
-    - `snowflake_model` - The name of the forecasting model to be created; I use "m"
-    - `snowflake_forecast_table` - Name of the table to put the results of the forecast; I use "forecasted"
-    - `snowflake_final_table` - Name of the table that is produced by unioning the raw and forecasted table; I use "final"
