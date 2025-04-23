@@ -16,9 +16,6 @@ CONFIG = {
     "database": Variable.get('snowflake_database'),
     "schema": Variable.get('snowflake_schema'),
     "table_name": Variable.get('snowflake_table'),
-    "model_name": Variable.get('snowflake_model'),
-    "forecast_table_name": Variable.get('snowflake_forecast_table'),
-    "final_table_name": Variable.get('snowflake_final_table')
 }
 
 # Default arguments for the DAG
