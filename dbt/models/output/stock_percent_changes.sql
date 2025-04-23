@@ -1,3 +1,4 @@
+-- Code adapted from https://stackoverflow.com/a/22764757
 WITH x AS (
 	SELECT * FROM {{ ref("stock_prices") }}
 	), y AS (
