@@ -127,8 +127,8 @@ def etl_dag():
     load_task_instance = load(cursor, total_data, table_name, database, schema)
 
     trigger_task_instance = TriggerDagRunOperator(
-        task_id="trigger_forecasting",
-        trigger_dag_id="train_predict_model"
+        task_id="trigger_dbt",
+        trigger_dag_id="BuildELT_dbt"
     )
 
     load_task_instance >> trigger_task_instance
