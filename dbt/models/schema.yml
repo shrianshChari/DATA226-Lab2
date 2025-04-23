@@ -3,11 +3,6 @@ version: 2
 models:
   - name: stock_percent_changes
     description: "Percentage changes in closing stock price for each stock"
-    # tests: 
-    #   - dbt_utils.unique_combination_of_columns:
-    #       combination_of_columns:
-    #         - date
-    #         - stock_symbol
     columns:
       - name: "(date || '-' || stock_symbol)"
         description: "Unique identifier for each stock price record"

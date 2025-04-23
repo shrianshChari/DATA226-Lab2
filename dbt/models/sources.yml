@@ -2,16 +2,16 @@ version: 2
 
 sources:
   - name: raw
-    database: USER_DB_BULLFROG
+    database: "{{ env_var('DBT_DATABASE') }}"
     schema: raw
     description: "Schema which stores raw tables (ETL)"
     tables:
       - name: stock_prices
         identifier: stock_prices
         description: "Open, close, min, and max stock price daily"
-  - name: analytics
-    database: USER_DB_BULLFROG
-    schema: analytics
+  - name: "{{ env_var('DBT_SCHEMA') }}"
+    database: "{{ env_var('DBT_DATABASE') }}"
+    schema: "{{ env_var('DBT_SCHEMA') }}"
     description: "Schema with stores analytics tables (ELT)"
     tables:
       - name: stock_percent_changes
