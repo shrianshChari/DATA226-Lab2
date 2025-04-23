@@ -17,7 +17,7 @@ conn = BaseHook.get_connection('snowflake_conn')
 with DAG(
     "BuildELT_dbt",
     start_date=datetime(2025, 3, 19),
-    description="A sample Airflow DAG to invoke dbt runs using a BashOperator",
+    description="An Airflow DAG to invoke dbt runs using a BashOperator",
     schedule=None,
     catchup=False,
     default_args={
